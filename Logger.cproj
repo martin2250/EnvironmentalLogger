@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>6.2</ProjectVersion>
+    <ToolchainName>com.Atmel.AVRGCC8.C</ToolchainName>
+    <ProjectGuid>{22537da3-0c92-4db2-8106-a82434327321}</ProjectGuid>
+    <avrdevice>ATmega88</avrdevice>
+    <avrdeviceseries>none</avrdeviceseries>
+    <OutputType>Executable</OutputType>
+    <Language>C</Language>
+    <OutputFileName>$(MSBuildProjectName)</OutputFileName>
+    <OutputFileExtension>.elf</OutputFileExtension>
+    <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
+    <AssemblyName>Logger</AssemblyName>
+    <Name>Logger</Name>
+    <RootNamespace>Logger</RootNamespace>
+    <ToolchainFlavour>Native</ToolchainFlavour>
+    <KeepTimersRunning>true</KeepTimersRunning>
+    <OverrideVtor>false</OverrideVtor>
+    <CacheFlash>true</CacheFlash>
+    <ProgFlashFromRam>true</ProgFlashFromRam>
+    <RamSnippetAddress>0x20000000</RamSnippetAddress>
+    <UncachedRange />
+    <OverrideVtorValue>exception_table</OverrideVtorValue>
+    <BootSegment>2</BootSegment>
+    <eraseonlaunchrule>0</eraseonlaunchrule>
+    <AsfFrameworkConfig>
+      <framework-data xmlns="">
+        <options />
+        <configurations />
+        <files />
+        <documentation help="" />
+        <offline-documentation help="" />
+        <dependencies>
+          <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.17.0" />
+        </dependencies>
+      </framework-data>
+    </AsfFrameworkConfig>
+    <avrtool>com.atmel.avrdbg.tool.stk500</avrtool>
+    <com_atmel_avrdbg_tool_stk500>
+      <ToolOptions>
+        <InterfaceProperties>
+          <IspClock>19200</IspClock>
+        </InterfaceProperties>
+        <InterfaceName>ISP</InterfaceName>
+      </ToolOptions>
+      <ToolType>com.atmel.avrdbg.tool.stk500</ToolType>
+      <ToolNumber>
+      </ToolNumber>
+      <ToolName>STK500</ToolName>
+    </com_atmel_avrdbg_tool_stk500>
+    <avrtoolinterface>ISP</avrtoolinterface>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <ToolchainSettings>
+      <AvrGcc>
+        <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+        <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+        <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+        <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
+        <avrgcc.common.outputfiles.usersignatures>False</avrgcc.common.outputfiles.usersignatures>
+        <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+        <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+        <avrgcc.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>NDEBUG</Value>
+          </ListValues>
+        </avrgcc.compiler.symbols.DefSymbols>
+        <avrgcc.compiler.optimization.level>Optimize for size (-Os)</avrgcc.compiler.optimization.level>
+        <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+        <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+        <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+        <avrgcc.linker.libraries.Libraries>
+          <ListValues>
+            <Value>libm</Value>
+          </ListValues>
+        </avrgcc.linker.libraries.Libraries>
+      </AvrGcc>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <ToolchainSettings>
+      <AvrGcc>
+        <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+        <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+        <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+        <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
+        <avrgcc.common.outputfiles.usersignatures>False</avrgcc.common.outputfiles.usersignatures>
+        <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+        <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+        <avrgcc.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>DEBUG</Value>
+          </ListValues>
+        </avrgcc.compiler.symbols.DefSymbols>
+        <avrgcc.compiler.optimization.level>Optimize most (-O3)</avrgcc.compiler.optimization.level>
+        <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+        <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+        <avrgcc.compiler.optimization.DebugLevel>Default (-g2)</avrgcc.compiler.optimization.DebugLevel>
+        <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+        <avrgcc.linker.libraries.Libraries>
+          <ListValues>
+            <Value>libm</Value>
+          </ListValues>
+        </avrgcc.linker.libraries.Libraries>
+        <avrgcc.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcc.assembler.debugging.DebugLevel>
+      </AvrGcc>
+    </ToolchainSettings>
+    <PostBuildEvent>"D:\Users\Martin\Documents\Atmel Studio\6.2\LoggerV2\Logger\Debug\upload.bat" $(Name)</PostBuildEvent>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="buttonDebounce.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="defines.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="24AA1025.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="24AA1025.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="global.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HYT939.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HYT939.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lib\hd44780.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lib\hd44780.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lib\hd44780_settings.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lib\i2cmaster.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lib\twimaster.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Logger.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="logging.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="logging.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="memstrings.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="menu.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="menu.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="memstrings.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="global.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="menuFunction.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="menuFunction.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="menuItems.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sendData.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sendData.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="showStatus.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="showStatus.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="time.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="time.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="util.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="util.h">
+      <SubType>compile</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="lib" />
+  </ItemGroup>
+  <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
+</Project>
