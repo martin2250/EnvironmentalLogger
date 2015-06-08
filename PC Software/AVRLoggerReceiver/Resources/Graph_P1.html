@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Klima
+		</title>
+		
+	
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		
+		<script type="text/javascript">
+			$(function () {Highcharts.setOptions({
+	lang: {
+		months: ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni',  'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'],
+		weekdays: ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'],
+		shortMonths: ['Jan', 'Feb', 'Mär', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dez']
+	}
+});
+});
+		</script>
+		<script type="text/javascript">
+			
+			$(function () {
+			$('#graph').highcharts({
+				chart: {
+					type: 'spline',
+					zoomType: 'x'
+				},
+				title: {
+					text: 'Klima'
+				},
+				xAxis: {
+					type: 'datetime',
+					minRange: 3600000 // 1/2 day
+				},
+				yAxis: [
+					{
+						title: {text: 'Temperatur'}
+					}, 
+					{
+						opposite: true,
+						title: {text: 'Luftfeuchte'}
+					},
+                    {
+                        opposite: true,
+                        title: {text: 'Batteriespannung'},
+                        max: 6,
+                        min: 0
+                    }
+				],
+				legend: {
+					enabled: false
+				},
+				plotOptions: {
+					line: {
+						marker: {
+							radius: 2
+						}
+					}
+				},
+		
+				series: [
+					{
+						type: 'line',
+						name: 'Temperatur',
+						data: [
