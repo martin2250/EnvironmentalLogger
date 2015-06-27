@@ -29,10 +29,6 @@ void HYT_request()
 	WDTCSR |= (_BV(WDCE) | _BV(WDE));	//start timed sequence
 	WDTCSR = _BV(WDIE) | _BV(WDP1);		//64ms
 	sei();
-	
-	power_timer0_enable();
-	TCNT0 = 0;
-	TCCR0B = Timer0TCCRB;
 }
 
 
