@@ -24,7 +24,7 @@ def start_influx(file):
 def write_influx(file, date, temperature, humidity, battery = None):
 	global args
 	file.write(args.measurement)
-	file.write(f' temp={temperature:0.2f},hum={humidity:0.2f}')
+	file.write(f' temperature={temperature:0.2f},humidity={humidity:0.2f}')
 	if battery is not None:
 		file.write(f',bat={battery:0.1f}')
 	file.write(f' {date.timestamp() * 1e9:0.0f}\n')
